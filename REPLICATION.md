@@ -1,8 +1,6 @@
 # [MC number] [Imperfect Example] Validation and Replication results
 
-> INSTRUCTIONS: Once you've read these instructions, DELETE THESE AND SIMILAR LINES.
-> In the above title, replace [Manuscript Title] with the actual title of the paper, and [MC number] with the Manuscript Central number (e.g., AEJPol-2017-0097)
-> Go through the steps to download and attempt a replication. Document your steps here, the errors generated, and the steps you took to alleviate those errors.
+
 
 > Some useful links:
 > - [Official Data and Code Availability Policy](https://www.aeaweb.org/journals/policies/data-code)
@@ -25,8 +23,6 @@ SUMMARY
 General
 -------
 
-> INSTRUCTIONS: Leave this in, when any of the sections is lacking. Remove the entire section only if the README has all the pieces necessary (up to minor imprecisions).
-
 > [SUGGESTED] A recommended README template for replication packages in economics can be found on the [Social Science Data Editor Github site](https://social-science-data-editors.github.io/guidance/template-README.html).
 
 Data description
@@ -39,11 +35,15 @@ Data description
 - Dataset is not provided, but a link is provided in the README: 
     https://doi.org/10.3886/ICPSR13568.v1
 - Access conditions are  described. The website requires registration.
-- The data are not cited in the paper nor in the README.
+- The data are cited in the paper, but not in the README. See template README referenced above.
 
-Suggested citation:
+Citation in paper
 
->United States. Bureau of the Census. Census of Population and Housing, 2000 [United States]:  Public Use Microdata Sample:  5-Percent Sample    . [distributor], 2006-01-12. https://doi.org/10.3886/ICPSR13568.v1
+> United States. Bureau of the Census. Census of Population and Housing, 2000 [United States]:  Public Use Microdata Sample:  5-Percent Sample    . [distributor], 2006-01-12. https://doi.org/10.3886/ICPSR13568.v1
+
+> [SUGGESTED] For clarity, please add data citations to the README as well.
+
+
 
 ### Analysis Data Files
 
@@ -52,75 +52,16 @@ Suggested citation:
 - [ ] Analysis data files mentioned, not provided (explain reasons below)
 - [ ] Analysis data files mentioned, provided. File names listed below.
 
-> INSTRUCTIONS: List all provided filenames here. For large deposits, this can be done using the "Git Bash" program:
-> > find . -name \*.dta
-> will list all Stata datasets. Replace `dta` with `.Rdata` or any other extension to find other datafiles.
-
-Example:
+The following analysis file is created, not mentioned:
 
 ```
-./Output_Empirical/data/census_shp/counties_coord.dta
-./Output_Empirical/data/census_shp/counties_db.dta
-./Output_Empirical/data/census_shp/state_coord.dta
-./Output_Empirical/data/census_shp/state_db.dta
+ pumsak.dta
 ```
 
 Data deposit
 ------------
 
-> INSTRUCTIONS: Most deposits will be at openICPSR, but all need to be checked for complete metadata. Detailed guidance is at [https://aeadataeditor.github.io/aea-de-guidance/](https://aeadataeditor.github.io/aea-de-guidance/). 
-
-### Requirements 
-
-> INSTRUCTIONS: Check that these requirements are met. 
-
-- [ ] README is in TXT, MD, PDF format
-- [ ] openICPSR deposit has no ZIP files
-- [ ] Title conforms to guidance (starts with "Data and Code for:" or "Code for:", is properly capitalized)
-- [ ] Authors (with affiliations) are listed in the same order as on the paper
-
-> INSTRUCTIONS: If any of the above are NOT checked, leave the related [REQUIRED] element here. Otherwise, delete the line.
-
-> [REQUIRED] Please ensure that a ASCII (txt), Markdown (md), or PDF version of the README are available in the data and code deposit.
-
-> [REQUIRED] openICPSR should not have ZIP files visible. ZIP files should be uploaded to openICPSR via "Import from ZIP" instead of "Upload Files". Please delete the ZIP files, and re-upload using the "Import from ZIP" function.
-
-> [REQUIRED] Please review the title of the openICPSR deposit as per our guidelines (below).
-
-> [REQUIRED] Please review authors and affiliations on the openICPSR deposit. In general, they are the same, and in the same order, as for the manuscript; however, authors can deviate from that order.
-
-> INSTRUCTIONS: Leave the following line in the report if any of the above are checked:
-
-> Detailed guidance is at [https://aeadataeditor.github.io/aea-de-guidance/](https://aeadataeditor.github.io/aea-de-guidance/). 
-
-### Deposit Metadata
-
-> INSTRUCTIONS: Some of these are specific to openICPSR (JEL, Manuscript Number). Others may or may not be present at other trusted repositories (Dataverse, Zenodo, etc.). Verify all items for openICPSR, check with supervisor for other deposits.
-
-- [ ] JEL Classification (required)
-- [ ] Manuscript Number (required)
-- [ ] Subject Terms (highly recommended)
-- [ ] Geographic coverage (highly recommended)
-- [ ] Time period(s) (highly recommended)
-- [ ] Collection date(s) (suggested)
-- [ ] Universe (suggested)
-- [ ] Data Type(s) (suggested)
-- [ ] Data Source (suggested)
-- [ ] Units of Observation (suggested)
-
-> INSTRUCTIONS: Go through the checklist above, and then choose ONE of the following results:
-
-- [NOTE] openICPSR metadata is sufficient.
-
-or
-
-- [REQUIRED] Please update the openICPSR metadata fields marked as (required), in order to improve findability of your data and code supplement. 
-
-and/or
-
-- [SUGGESTED] We suggest you update the openICPSR metadata fields marked as (highly recommended), in order to improve findability of your data and code supplement. 
-- [SUGGESTED] We suggest you update the openICPSR metadata fields marked as (suggested), in order to improve findability of your data and code supplement. 
-
+(skipped, not relevant here, but could be meaningful if creating an accompanying deposit.
 
 For additional guidance, see [https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html).
 
@@ -133,35 +74,27 @@ No data are present so we ran no checks.
 Code description
 ----------------
 
-there are five provided Stata do files, including a "master.do", and one DCT (dictionary) file. 
-- Table 1 is generated by '02_table1.do'
-> INSTRUCTIONS: Review the code (but do not run it yet). Identify programs that create "analysis files" ("data preparation code"). Identify programs that create tables and figures. Not every deposit will have separate programs for this.
+There are five provided Stata do files, including a "master.do", and one DCT (dictionary) file. 
 
-> INSTRUCTIONS: Identify all **Figure, Table, and any in-text numbers**. Create a list, mapping each of them to a particular program and line number within the program (use [this template](code-check-TEMPLATE.xlsx)). Commit that list. You will come back to the list in your findings. IN THIS SECTION, point out only a summary description, including of shortcomings. E.g.
+- `01_dataclean.do` does data preparation
+- Table 1 is generated by `02_table1.do`
 
-There are four provided Stata do files, three Matlab .m files, including a "master.do".
 
-- Table 5: could not identify code that produces Table 5
-- Neither the program codes, nor the README, identify which tables are produced by what program.
-
-> NOTE: In-text numbers that reference numbers in tables do not need to be listed. Only in-text numbers that correspond to no table or figure need to be listed.
 
 Stated Requirements
 ---------------------
 
-> INSTRUCTIONS: The authors may have specified specific requirements in terms of software, computer hardware, etc. Please list them here. This is **different** from the Computing Environment of the Replicator. You have the option to amend these with unstated requirements later. If all requirements are listed, check the box "Requirements are complete".
+
 
 - [ ] No requirements specified
 - [x] Software Requirements specified as follows:
   - Stata (inferred)
-- [ ] Computational Requirements specified as follows:
-  - Cluster size, etc.
-- [ ] Time Requirements specified as follows:
-  - Length of necessary computation (hours, weeks, etc.)
+- [x] Computational Requirements specified as follows:
+  - 2016 vintage workstation, Linux
+- [x] Time Requirements specified as follows:
+  - 1.6s
 
-- [] Requirements are complete.
-
-> If easier, simply copy-and-paste the authors' stated requirements here:
+- [ ] Requirements are complete.
 
 
 Missing Requirements
@@ -200,16 +133,22 @@ Replication steps
 
 >[SUGGESTED] Add code to "config.do" that creates directories named "inputdata" and "outputdata".
 
+> [SUGGESTED] Specify where the downloaded data needs to be stored.
+
+When unzipping (on Windows), the directories created did not correspond to the code.
+
+> [SUGGESTED] While the data downloaded contains 100+ files, only one file is used. Please specify this in the README, as individual files can be downloaded from ICPSR.
+
 Findings
 --------
 
-> INSTRUCTIONS: Describe your findings both positive and negative in some detail, for each **Data Preparation Code, Figure, Table, and any in-text numbers**. You can re-use the Excel file created under *Code Description*. When errors happen, be as precise as possible. For differences in figures, provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran. For differences in numbers, provide both the number as reported in the manuscript, as well as the number replicated. If too many numbers, contact your supervisor.
+### Data Preparation
+
+Code runs cleanly, analysis data is created.
 
 
 
 ### Tables
-
-Examples:
 
 - Table 1: Looks the same
 
@@ -231,7 +170,7 @@ Classification
 ### Reason for incomplete reproducibility
 
 - [ ] `Discrepancy in output` (either figures or numbers in tables or text differ)
-- [ ] `Bugs in code`  that  were fixable by the replicator (but should be fixed in the final deposit)
+- [x] `Bugs in code`  that  were fixable by the replicator (but should be fixed in the final deposit)
 - [ ] `Code missing`, in particular if it  prevented the replicator from completing the reproducibility check
   - [ ] `Data preparation code missing` should be checked if the code missing seems to be data preparation code
 - [ ] `Code not functional` is more severe than a simple bug: it  prevented the replicator from completing the reproducibility check
